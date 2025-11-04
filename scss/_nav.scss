@@ -1,8 +1,32 @@
 #sideNav {
   .navbar-nav .nav-item .nav-link {
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 0;
+      background: $primary;
+      transition: height 0.3s ease;
+    }
+
+    &:hover,
+    &.active {
+      color: $primary !important;
+
+      &::before {
+        height: 60%;
+      }
+    }
   }
   .navbar-toggler {
     &:focus {
@@ -31,7 +55,14 @@
       .img-profile {
         max-width: 10rem;
         max-height: 10rem;
-        border: 0.5rem solid fade-out($white, 0.8);
+        border: 0.5rem solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 8px 30px rgba(189, 93, 56, 0.3);
+        }
       }
     }
     .navbar-collapse {
