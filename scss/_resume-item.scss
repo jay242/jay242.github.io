@@ -2,10 +2,88 @@ section.resume-section {
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
   max-width: 75rem;
+
   .resume-item {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 2px solid $gray-300;
+    margin-bottom: 3rem !important;
+    transition: border-color 0.3s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: $primary;
+      border: 2px solid white;
+      box-shadow: 0 0 0 2px $gray-300;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      border-left-color: $primary;
+
+      &::before {
+        transform: scale(1.3);
+        box-shadow: 0 0 0 3px lighten($primary, 30%);
+      }
+    }
+
+    h3 {
+      margin-bottom: 0.5rem;
+      color: $gray-900;
+    }
+
+    .subheading {
+      font-size: 1.1rem;
+      color: $gray-600;
+      font-weight: 500;
+
+      a {
+        color: $primary;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease;
+
+        &:hover {
+          border-bottom-color: $primary;
+        }
+      }
+    }
+
+    ul {
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+
+        &::before {
+          content: '▹';
+          position: absolute;
+          left: 0;
+          color: $primary;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
     .resume-content {}
     .resume-date {
       min-width: none;
+
+      .text-primary {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: lighten($primary, 40%);
+        color: $primary;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
     }
   }
 }
@@ -23,5 +101,23 @@ section.resume-section {
   section.resume-section {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
+  }
+}
+@media (max-width: 768px) {
+  section.resume-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+
+    .resume-item {
+      padding-left: 1rem;
+
+      .resume-content {
+        margin-bottom: 1rem;
+      }
+
+      .resume-date {
+        text-align: left !important;
+      }
+    }
   }
 }
