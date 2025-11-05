@@ -107,7 +107,6 @@ p.lead {
   background: linear-gradient(135deg, #495057, #343a40);
   color: #fff !important;
   border-radius: 100%;
-  text-align: center;
   font-size: 1.5rem;
   margin-right: 1rem;
   position: relative;
@@ -128,10 +127,12 @@ p.lead {
   opacity: 0;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
+  z-index: 0;
 }
 .social-icons a i {
   position: relative;
   z-index: 1;
+  display: inline-block;
 }
 .social-icons a:hover {
   -webkit-transform: translateY(-5px);
@@ -390,6 +391,10 @@ section.resume-section .resume-item .subheading a {
 }
 section.resume-section .resume-item .subheading a:hover {
   border-bottom-color: #BD5D38;
+}
+section.resume-section .resume-item ul {
+  list-style: none;
+  padding-left: 0;
 }
 section.resume-section .resume-item ul li {
   position: relative;
